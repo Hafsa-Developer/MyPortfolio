@@ -70,7 +70,15 @@ body {
     color: #333;
     font-weight: 500;
     transition: 0.3s;
+    display: block;
+    width: 100%;
+    padding: 12px 0;
 }
+.nav-links li {
+    width: 100%;
+    text-align: center;
+}
+
 
 /* Underline effect */
 .nav-links a::after {
@@ -112,13 +120,13 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Hover */
+
 .nav-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(127, 90, 240, 0.4);
 }
 
-/* Click press */
+
 .nav-btn:active {
     transform: scale(0.95);
 }
@@ -149,7 +157,7 @@ body {
     margin: auto;
 }
 
-/* Text */
+
 .hero-content {
     max-width: 500px;
 }
@@ -168,7 +176,7 @@ body {
     color: #555;
 }
 
-/* Buttons */
+
 .buttons {
     display: flex;
     gap: 15px;
@@ -189,13 +197,13 @@ body {
         
 }
 
-/* Hover effect */
+
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Click (press) effect */
+
 .btn:active {
     transform: scale(0.95);
 }
@@ -278,7 +286,6 @@ body {
     animation: fadeUp 1s ease;
 }
 
-/* Header (keeping your original style, just refined a bit) */
 .services-header {
     text-align: left;
     margin-bottom: 50px;
@@ -301,20 +308,19 @@ body {
     color: #333;
 }
 
-/* === SERVICES CONTAINER — flex layout === */
+/* === SERVICES CONTAINER === */
 .services-container {
     display: flex;
     gap: 25px;
     flex-wrap: wrap;
 }
 
-/* service box — refined */
+
 .service-box {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(12px);
     border-radius: 20px;
     padding: 30px 25px 25px 25px;
-    /* more top padding for breathing */
     width: 320px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -323,7 +329,6 @@ body {
     flex-direction: column;
 }
 
-/* icon container — circle with very light background */
 .service-icon-wrapper {
     display: flex;
     justify-content: center;
@@ -331,37 +336,30 @@ body {
     width: 70px;
     height: 70px;
     background: rgba(230, 230, 250, 0.5);
-    /* very light violet hint, matches background */
     border-radius: 50%;
     margin-bottom: 20px;
-    /* space below icon before heading */
     transition: background 0.2s ease;
     box-shadow: 0 5px 12px rgba(127, 90, 240, 0.1);
-    /* extra subtle soft shadow */
 }
 
-/* icon itself — smaller, sharp, in your brand color #7f5af0 */
+
 .service-icon-wrapper i {
     font-size: 32px;
-    /* smaller than before (was 50px) */
     color: #7f5af0;
-    /* your signature purple */
     transition: transform 0.2s ease;
 }
 
-/* heading — now below icon, left aligned, black */
+
 .service-box h3 {
     font-size: 1.4rem;
     font-weight: 600;
     color: #222222;
-    /* pure blackish */
     margin: 0 0 12px 0;
-    /* top margin 0, bottom spacing */
     text-align: left;
     line-height: 1.2;
 }
 
-/* paragraph styling (kept your original) */
+
 .service-box p {
     color: #555;
     font-size: 0.95rem;
@@ -369,24 +367,23 @@ body {
     margin: 0;
 }
 
-/* hover effect — icon circle gets slightly more visible */
+
 .service-box:hover .service-icon-wrapper {
     background: rgba(200, 180, 255, 0.25);
-    /* gently deepen on hover */
+    
 }
 
 .service-box:hover .service-icon-wrapper i {
     transform: scale(1.05);
-    /* tiny pop */
 }
 
-/* overall box hover */
+
 .service-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(127, 90, 240, 0.15);
 }
 
-/* fadeUp animation (from your original) */
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -427,7 +424,6 @@ body {
 .about-section {
     max-width: 100% !important;
     background: rgba(20, 20, 28, 0.85);
-    /* dark with slight transparency */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 50px 60px;
@@ -441,7 +437,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* LEFT: image with a subtle glow (keeping your theme's aesthetic) */
+
 .about-image {
     flex: 1;
     min-width: 300px;
@@ -465,7 +461,6 @@ body {
     transform: scale(1.01);
 }
 
-/* optional soft radial glow behind image (subtle) */
 .about-image::after {
     content: "";
     position: absolute;
@@ -477,13 +472,11 @@ body {
     filter: blur(40px);
 }
 
-/* RIGHT: text content */
 .about-content {
     flex: 1;
     min-width: 300px;
 }
 
-/* "About Me" small heading */
 .about-subtitle {
     font-size: 1rem;
     text-transform: uppercase;
@@ -493,7 +486,7 @@ body {
     font-weight: 400;
 }
 
-/* name heading */
+
 .about-content h2 {
     font-size: 2.8rem;
     font-weight: 600;
@@ -504,10 +497,8 @@ body {
 
 .about-content h2 span {
     color: #7f5af0;
-    /* your signature purple */
 }
 
-/* description paragraph */
 .about-description {
     color: #c0c0d0;
     margin-bottom: 30px;
@@ -516,7 +507,7 @@ body {
     max-width: 500px;
 }
 
-/* stats grid: 600+  /  50+  /  18+ */
+
 .about-stats {
     display: flex;
     gap: 35px;
@@ -585,7 +576,6 @@ body {
     color: white;
 }
 
-/* Signature style - exactly after button */
 .about-signature {
     font-size: 1.6rem;
     font-weight: 500;
@@ -621,7 +611,7 @@ body {
     animation: fadeUp 1s ease;
 }
 
-/* header */
+
 .projects-header {
     margin-bottom: 40px;
 }
@@ -644,14 +634,12 @@ body {
     color: #333;
 }
 
-/* grid */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
 }
 
-/* card (matching services/contact style) */
 .project-card {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(12px);
@@ -668,7 +656,7 @@ body {
     box-shadow: 0 20px 40px rgba(127, 90, 240, 0.15);
 }
 
-/* image */
+
 .project-card img {
     width: 100%;
     height: auto;
@@ -678,14 +666,13 @@ body {
     aspect-ratio: 16 / 10;
 }
 
-/* content */
+
 .project-content {
     padding: 18px;
     padding-bottom: 58px;
-    /* extra bottom padding to avoid overlapping with absolute positioned arrow */
 }
 
-/* tags */
+
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -703,7 +690,7 @@ body {
     backdrop-filter: blur(2px);
 }
 
-/* title */
+
 .project-content h3 {
     font-size: 0.95rem;
     color: #222;
@@ -735,7 +722,6 @@ body {
     transition: all 0.3s ease;
     text-decoration: none;
     font-size: 1.4rem;
-    /* Adjust size for arrow */
     font-weight: bold;
 }
 
@@ -822,7 +808,7 @@ body {
     }
 }
 
-/* demo placeholder images styling (we'll use placeholders but match the design) */
+
 .demo-img-placeholder {
     background: linear-gradient(145deg, #cbd5e1, #e2e8f0);
     display: flex;
@@ -834,7 +820,7 @@ body {
     aspect-ratio: 16 / 10;
 }
 
-/* small extra polish */
+
 .project-card {
     transition: transform 0.25s ease, box-shadow 0.3s;
 }
@@ -847,7 +833,7 @@ body {
     animation: fadeUp 1s ease;
 }
 
-/* header with small line + purple "Contact Us" – matches services / about pattern */
+
 .contact-header {
     text-align: left;
     margin-bottom: 40px;
@@ -864,16 +850,14 @@ body {
 .contact-header h2 {
     font-size: 2.5rem;
     color: #7f5af0;
-    /* purple as in "Services I provide" */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .contact-header h2 span {
     color: #333;
-    /* dark grey for "Projects" word */
 }
 
-/* sub-text under main heading */
+
 .contact-header p {
     color: #555;
     max-width: 550px;
@@ -881,14 +865,14 @@ body {
     font-size: 0.95rem;
 }
 
-/* main contact grid: left info / right form */
+
 .contact-grid {
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
 }
 
-/* left info card (glassmorphism, blur, border) */
+
 .contact-info {
     flex: 1 1 280px;
     background: rgba(255, 255, 255, 0.7);
@@ -922,7 +906,6 @@ body {
     width: 48px;
     height: 48px;
     background: rgba(230, 230, 250, 0.6);
-    /* soft violet background */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -961,7 +944,6 @@ body {
     color: #7f5af0;
 }
 
-/* divider line inside info (consistent with theme) */
 .info-divider {
     height: 1px;
     background: rgba(0, 0, 0, 0.05);
@@ -969,7 +951,7 @@ body {
     width: 100%;
 }
 
-/* right contact form – same glass */
+
 .contact-form {
     flex: 2 1 500px;
     background: rgba(255, 255, 255, 0.7);
@@ -987,7 +969,6 @@ body {
     box-shadow: 0 20px 40px rgba(127, 90, 240, 0.1);
 }
 
-/* form row grid */
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1046,7 +1027,6 @@ textarea:focus {
     background: rgba(255, 255, 255, 0.8);
 }
 
-/* dropdown arrow custom (subtle) */
 select {
     appearance: none;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%237f5af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
@@ -1062,7 +1042,6 @@ select {
     font-size: 0.9rem;
 }
 
-/* send message button – exactly like .btn primary / nav button */
 .send-btn {
     padding: 14px 40px;
     border-radius: 40px;
@@ -1111,7 +1090,7 @@ select {
     left: 100%;
 }
 
-/* fadeUp same as your theme */
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -1218,12 +1197,11 @@ select {
     }
 }
 
-/* ===== RESET LINK UNDERLINE ===== */
 a {
     text-decoration: none;
 }
 
-/* ===== REMOVE UNDERLINE FROM ALL LINKS ===== */
+
 a {
     text-decoration: none;
 }
@@ -1237,7 +1215,7 @@ a {
     border-top: 1px solid rgba(127, 90, 240, 0.2);
 }
 
-/* wrapper */
+
 .footer-wrapper {
     width: 90%;
     max-width: 1100px;
@@ -1248,7 +1226,7 @@ a {
     gap: 40px;
 }
 
-/* brand */
+
 .footer-brand h2 {
     font-size: 1.8rem;
     background: linear-gradient(135deg, #fff, #7f5af0);
@@ -1307,10 +1285,7 @@ a {
     background: rgba(255, 255, 255, 0.05);
     color: #7f5af0;
     font-size: 1rem;
-
     text-decoration: none;
-    /* IMPORTANT FIX */
-
     transition: all 0.3s ease;
 }
 
@@ -1346,5 +1321,267 @@ a {
 
     .footer-links a:hover {
         padding-left: 0;
+    }
+}
+
+
+/* ============================= */
+/* 🔥 GLOBAL RESPONSIVE FIXES */
+/* ============================= */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============================= */
+/* 🔥 NAVBAR MOBILE */
+/* ============================= */
+
+/* ============================= */
+/* 🔥 NAVBAR MOBILE FINAL FIX */
+/* ============================= */
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        border-radius: 0 0 20px 20px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: 0.3s ease;
+
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .nav-btn {
+        display: none;
+    }
+        .navbar {
+            position: fixed;
+            z-index: 1000;
+        }
+}
+
+/* ============================= */
+/* 🔥 HERO SECTION */
+/* ============================= */
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding-top: 120px;
+        gap: 40px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-image img {
+        width: 260px !important;
+        height: auto;
+        margin-top: 0;
+    }
+
+    .hero-image::after {
+        width: 260px !important;
+    }
+}
+
+/* ============================= */
+/* 🔥 ABOUT SECTION */
+/* ============================= */
+
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-description {
+        margin: auto;
+    }
+
+    .about-stats {
+        justify-content: center;
+    }
+}
+
+/* ============================= */
+/* 🔥 ABOUT SECTION FIX (iPhone) */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    .about-section {
+        padding: 40px 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .about-image {
+        min-width: 100%;
+    }
+
+    .about-image img {
+        max-width: 280px;
+        width: 100%;
+    }
+
+    .about-content {
+        min-width: 100%;
+    }
+
+    .about-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-description {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .about-stats {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .button-signature-wrapper {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about-signature {
+        padding-left: 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .about-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .about-image img {
+        max-width: 240px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+.button-signature-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .button-signature-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .download-btn {
+        width: fit-content;
+        margin: auto;
+    }
+
+    .about-signature {
+        text-align: center;
+    }
+}
+
+/* ============================= */
+/* 🔥 CONTACT SECTION */
+/* ============================= */
+
+@media (max-width: 900px) {
+    .contact-grid {
+        flex-direction: column;
+    }
+}
+
+/* ============================= */
+/* 🔥 SMALL MOBILE */
+/* ============================= */
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .services-header h2,
+    .projects-header h2,
+    .contact-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .nav-inner {
+        border-radius: 20px;
     }
 }

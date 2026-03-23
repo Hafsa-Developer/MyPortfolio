@@ -17,6 +17,23 @@ document.addEventListener("click", function(e) {
     }, 600);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    // toggle menu
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // close menu on click
+    navItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+});
 
 
  (function() {
@@ -42,7 +59,7 @@ document.addEventListener("click", function(e) {
 /* AJAX JavaScript */
 
 document.getElementById('contact-form').addEventListener('submit', async function(e) {
-    e.preventDefault(); // Form ko default submit hone se roken
+    e.preventDefault();
     
     const form = this;
     const formData = new FormData(form);
@@ -57,7 +74,6 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     messageDiv.style.display = 'none';
     
     try {
-        // Formspree ko AJAX request bhejen
         const response = await fetch('https://formspree.io/f/xnjgwpbr', {
             method: 'POST',
             body: formData,
@@ -67,15 +83,11 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         });
         
         if (response.ok) {
-            // Success - apna custom message dikhayein
             messageDiv.style.display = 'flex';
             messageDiv.className = 'alert success';
             messageDiv.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. I will get back to you soon.';
-            
-            // Form clear karein
             form.reset();
             
-            // 5 seconds baad message hide karein
             setTimeout(() => {
                 messageDiv.style.display = 'none';
             }, 5000);
@@ -85,12 +97,11 @@ document.getElementById('contact-form').addEventListener('submit', async functio
             throw new Error(data.error || 'Form submission failed');
         }
     } catch (error) {
-        // Error message dikhayein
         messageDiv.style.display = 'flex';
         messageDiv.className = 'alert error';
         messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please try again.';
     } finally {
-        // Submit button wapas enable karein
+    
         submitBtn.disabled = false;
         submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit';
     }
@@ -103,12 +114,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const messageText = document.getElementById('message-text');
     const okBtn = document.getElementById('message-ok-btn');
     
-    // OK button click handler
     okBtn.addEventListener('click', function() {
         messageDiv.style.display = 'none';
     });
     
-    // Form submit handler
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
@@ -123,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
         messageDiv.style.display = 'none';
         
         try {
-            // Formspree ko request bhejen
             const response = await fetch('https://formspree.io/f/xjvqkqrw', {
                 method: 'POST',
                 body: formData,
@@ -135,23 +143,20 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = await response.json();
             
             if (response.ok) {
-                // Success message with OK button
                 messageDiv.className = 'alert success';
                 messageText.textContent = 'Your message has been sent successfully!';
                 messageDiv.style.display = 'flex';
                 
-                // Form clear karein
                 this.reset();
                 
-                // Optional: auto-hide after 10 seconds agar OK button press na karein
                 setTimeout(() => {
                     if (messageDiv.style.display === 'flex') {
                         messageDiv.style.display = 'none';
                     }
-                }, 10000); // 10 seconds
+                }, 10000);
                 
             } else {
-                // Error message
+            
                 throw new Error(data.error || 'Form submission failed');
             }
         } catch (error) {
@@ -160,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
             messageText.textContent = 'Something went wrong. Please try again.';
             messageDiv.style.display = 'flex';
             
-            // Error message OK button ke saath
+        
             setTimeout(() => {
                 if (messageDiv.style.display === 'flex') {
                     messageDiv.style.display = 'none';
@@ -180,6 +185,8 @@ okBtn.addEventListener('click', function() {
     messageDiv.style.opacity = '0';
     setTimeout(() => {
         messageDiv.style.display = 'none';
-        messageDiv.style.opacity = '1'; // Reset for next time
+        messageDiv.style.opacity = '1';
     }, 300);
 });
+
+
