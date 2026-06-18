@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
     downloadBtn.addEventListener('click', function() {
         try {
             const link = document.createElement('a');
-            link.href = '/Images/resume.pdf';
-            link.download = 'Hafsa_Faisal_Resume.pdf';
+            link.href = '/Images/hafsa-resume.pdf';
+            link.download = 'Hafsa_CV.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -55,6 +55,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 })();
 
+
+
+ (function() {
+        // ensure all images have fallback if broken (just extra)
+        const images = document.querySelectorAll('.project-card img');
+        images.forEach(img => {
+            img.addEventListener('error', function() {
+                if (!this.dataset.fallback) {
+                    this.dataset.fallback = 'true';
+                    // gentle fallback based on alt or parent context
+                    const parentCard = this.closest('.project-card');
+                    let fallbackText = 'Project preview';
+                    if (parentCard) {
+                        const titleEl = parentCard.querySelector('h3');
+                        if (titleEl) fallbackText = titleEl.innerText.substring(0, 20);
+                    }
+                    this.src = `https://placehold.co/600x400/eef2ff/334155?text=${encodeURIComponent(fallbackText)}`;
+                }
+            });
+        });
+    })();
 
 /* AJAX JavaScript */
 
